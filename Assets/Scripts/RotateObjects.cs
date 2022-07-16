@@ -17,6 +17,11 @@ public class RotateObjects : MonoBehaviour
         isRotating = true;
         isTriggered = false;
     }
+    private void OnEnable()
+    {
+        isRotating = true;
+        isTriggered = false;
+    }
 
     void FixedUpdate()
     {

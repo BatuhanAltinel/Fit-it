@@ -12,9 +12,11 @@ public class ApplyForce : MonoBehaviour
         myBody = GetComponent<Rigidbody>();
     }
 
+
     void FixedUpdate()
     {
-        myBody.AddForce(Vector3.down * downSpeed * Time.deltaTime);
+        //myBody.AddForce(Vector3.down * downSpeed * Time.deltaTime);
+        transform.Translate(Vector3.down * downSpeed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -26,7 +28,9 @@ public class ApplyForce : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("LastTrigger"))
         {
+            Debug.Log("Last tiggered");
             gameObject.SetActive(false);
+            GetComponentInChildren<RotateObjects>().isTriggered = true;
         }
     }
 }

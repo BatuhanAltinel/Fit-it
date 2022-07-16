@@ -8,6 +8,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] _objectsArray = new GameObject[5];
     int levelIndex;
     float spawnWaitingTime = 5.5f;
+    public bool isAppear = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class SpawnManager : MonoBehaviour
        
     }
 
-    Vector3 CalculateSpawnPoint()
+    public Vector3 CalculateSpawnPoint()
     {
         float maxX = Random.Range(-2.2f, 2.2f);
         float maxY = 8.0f;
@@ -37,7 +38,7 @@ public class SpawnManager : MonoBehaviour
         return spawnPoint;
     }
 
-    void SpawnShapes()
+    public void SpawnShapes()
     {
         
         if (levelIndex < 6)
