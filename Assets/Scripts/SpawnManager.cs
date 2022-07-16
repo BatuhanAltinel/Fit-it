@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager _spawnManager;
     public GameObject[] _objectsArray = new GameObject[5];
-    int levelIndex = 0;
+    int levelIndex;
     float spawnWaitingTime = 5.5f;
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,9 @@ public class SpawnManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
-        DontDestroyOnLoad(_spawnManager);
 
+        DontDestroyOnLoad(_spawnManager);
+        levelIndex = 1;
         SpawnShapes();
     }
 
@@ -41,17 +42,19 @@ public class SpawnManager : MonoBehaviour
         
         if (levelIndex < 6)
         {
-            for (int i = 0; i < 1; i++)
-            {
+                int randomIndex = Random.Range(0, _objectsArray.Length - 2);
+                Instantiate(_objectsArray[randomIndex], CalculateSpawnPoint(), Quaternion.identity);
+                StartCoroutine("SpawnDelay");  
+        }
+        else if(levelIndex >= 6)
+        {
                 int randomIndex = Random.Range(0, _objectsArray.Length - 2);
                 Instantiate(_objectsArray[randomIndex], CalculateSpawnPoint(), Quaternion.identity);
                 StartCoroutine("SpawnDelay");
-            }
         }
     }
     IEnumerator SpawnDelay()
     {
-        
         yield return new WaitForSeconds(spawnWaitingTime);
         StartCoroutine("SpawnShapes");
     }

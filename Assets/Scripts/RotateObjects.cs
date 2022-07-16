@@ -22,6 +22,7 @@ public class RotateObjects : MonoBehaviour
     {
         RotatingObject(rotateDirection);
         StopRotating(yRotation);
+        BoundaryZAxis();
         
     }
     
@@ -41,6 +42,14 @@ public class RotateObjects : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, yRot, 0);
                 isRotating = false;
             }
+        }
+    }
+
+    void BoundaryZAxis()
+    {
+        if (this.transform.position.z < 0 ||this.transform.position.z > 0)
+        {
+            this.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         }
     }
 

@@ -24,9 +24,9 @@ public class ApplyForce : MonoBehaviour
          Debug.Log("Triggered..");
          GetComponentInChildren<RotateObjects>().isTriggered = true;
         }
-        else if (other.gameObject.CompareTag("Player"))
+        else if (other.gameObject.CompareTag("LastTrigger"))
         {
-            downSpeed = 0;
+            gameObject.SetActive(false);
         }
     }
 }
