@@ -38,7 +38,6 @@ public class RotateObjects : MonoBehaviour
         {
             if (this.transform.eulerAngles.x >= 0 && this.transform.eulerAngles.x <= 10)
             {
-                Debug.Log("x rot 0 now.");
                 transform.rotation = Quaternion.Euler(0, yRot, 0);
                 isRotating = false;
             }
