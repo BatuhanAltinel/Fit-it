@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8690161131904643611}
   - component: {fileID: 8690161131904643612}
   - component: {fileID: 8690161131904643613}
-  - component: {fileID: 8690161131904643614}
   - component: {fileID: 8690161131904643615}
   m_Layer: 0
   m_Name: StarP
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8690161131904643584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.3, z: 0.70000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9156696537375146316}
   m_Father: {fileID: 8690161132469551998}
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8690161131904643614
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8690161131904643584}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &8690161131904643615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 220
   isTriggered: 0
+  yRotation: 0
+  rotateDirection: 1
 --- !u!1 &8690161132469551969
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,17 +176,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cc1eecae870a3fd4dbd499d0b789425e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc1eecae870a3fd4dbd499d0b789425e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 80
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc1eecae870a3fd4dbd499d0b789425e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc1eecae870a3fd4dbd499d0b789425e,
         type: 3}
@@ -281,5 +268,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.024966279, y: 0.0063000005, z: 0.023380296}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.318406, y: 0.39014256, z: 2.2009706}
+  m_Center: {x: -0.023897443, y: -0.016581755, z: -0.0057256417}

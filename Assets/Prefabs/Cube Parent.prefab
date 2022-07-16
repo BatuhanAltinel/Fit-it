@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9199640086862788347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.70000005, z: 0.70000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8656224799073912055}
   m_Father: {fileID: 9199640087457701410}
@@ -111,6 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 350
   isTriggered: 0
+  yRotation: 0
+  rotateDirection: 1
 --- !u!1 &9199640087457701415
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,17 +190,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cbc10498847922743befe53e0db975b6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbc10498847922743befe53e0db975b6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbc10498847922743befe53e0db975b6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbc10498847922743befe53e0db975b6,
         type: 3}
@@ -285,5 +287,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.019999998, z: 0.019999998}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.0434177, y: 0.33947486, z: 2.048865}
+  m_Center: {x: -0.00022953578, y: -0.0010204178, z: -0.03607733}

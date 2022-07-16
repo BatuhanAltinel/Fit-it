@@ -8,7 +8,9 @@ public class RotateObjects : MonoBehaviour
     [SerializeField] float rotateSpeed;
     
     private bool isRotating;
-    public bool isTriggered ;
+    public bool isTriggered;
+    public float yRotation;
+    public int rotateDirection =1;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,26 +20,26 @@ public class RotateObjects : MonoBehaviour
 
     void FixedUpdate()
     {
-        RotatingObject();
-        StopRotating();
+        RotatingObject(rotateDirection);
+        StopRotating(yRotation);
         
     }
     
-    void RotatingObject()
+    void RotatingObject(int rotateDirection)
     {
         if (isRotating)
         {
-            transform.Rotate(Vector3.left, rotateSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.left * rotateDirection, rotateSpeed * Time.deltaTime);
         }
     }
-    void StopRotating()
+    void StopRotating(float yRot)
     {
         if (isTriggered)
         {
             if (this.transform.eulerAngles.x >= 0 && this.transform.eulerAngles.x <= 10)
             {
                 Debug.Log("x rot 0 now.");
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                transform.rotation = Quaternion.Euler(0, yRot, 0);
                 isRotating = false;
             }
         }
