@@ -23,8 +23,16 @@ public class ObjectPooling : MonoBehaviour
     private GameObject trianglesParent;
 
     private GameObject cubesInstantiate = null;
+    private GameObject cookiesInstantiate = null;
+    private GameObject disksInstantiate = null;
+    private GameObject starsInstantiate = null;
+    private GameObject trianglesInstantiate = null;
 
     private int amountOfObject = 4;
+    private int typeOfObjects = 5;
+    private float spawnWaitingTime = 5.5f;
+    private int randomSelectNumber;
+
 
     
     void Awake()
@@ -35,29 +43,62 @@ public class ObjectPooling : MonoBehaviour
         starsParent = GameObject.Find("Stars");
         trianglesParent = GameObject.Find("Triangles");
 
-        CreateCubesFirstStart();
-        SpawnCubes();
+        CreateObjectsFirstStart();
     }
     private void Start()
     {
         
+        SpawnCubes(cubesQueue);
     }
 
-    void SpawnCubes()
+    void SpawnCubes(Queue<GameObject> newQueue)
     {
-        GetFromPool().transform.position = GetVector();
-        GetFromPool().SetActive(true);
+        newQueue = cubesQueue;
+        GetFromPool(newQueue).transform.position = GetVector();
+        GetFromPool(newQueue).SetActive(true);
         StartCoroutine("DelaySpawn");
         
     }
-
-    GameObject GetFromPool()
+    void SpawnCookies(Queue<GameObject> newQueue)
     {
-        foreach (GameObject cube in cubesQueue)
+        newQueue = cookiesQueue;
+        GetFromPool(newQueue).transform.position = GetVector();
+        GetFromPool(newQueue).SetActive(true);
+        StartCoroutine("DelaySpawn");
+    }
+    void SpawnDisks(Queue<GameObject> newQueue)
+    {
+        newQueue = diskQueue;
+        GetFromPool(newQueue).transform.position = GetVector();
+        GetFromPool(newQueue).SetActive(true);
+        StartCoroutine("DelaySpawn");
+
+    }
+    void SpawnStars(Queue<GameObject> newQueue)
+    {
+        newQueue = starQueue;
+        GetFromPool(newQueue).transform.position = GetVector();
+        GetFromPool(newQueue).SetActive(true);
+        StartCoroutine("DelaySpawn");
+
+    }
+    void SpawnTriangles(Queue<GameObject> newQueue)
+    {
+        newQueue = triangleQueue;
+        GetFromPool(newQueue).transform.position = GetVector();
+        GetFromPool(newQueue).SetActive(true);
+        StartCoroutine("DelaySpawn");
+
+    }
+
+
+    GameObject GetFromPool(Queue<GameObject> newQueue)
+    {
+        foreach (GameObject obj in newQueue)
         {
-            if (cube.activeInHierarchy == false)
+            if (obj.activeInHierarchy == false)
             {
-                return cube;
+                return obj;
             }
         }
         return null;
@@ -73,11 +114,43 @@ public class ObjectPooling : MonoBehaviour
     }
     IEnumerator DelaySpawn()
     {
-        yield return new WaitForSeconds(5.5f);
-        StartCoroutine("SpawnCubes");
+        yield return new WaitForSeconds(spawnWaitingTime);
+        StartCoroutine("RandomObjectSpawn");
     }
 
-    private void CreateCubesFirstStart()
+    void RandomObjectSpawn()
+    {
+        randomSelectNumber = Random.Range(0, typeOfObjects);
+        Queue<GameObject> selectedQueue = new Queue<GameObject>();
+        switch (randomSelectNumber)
+        {
+            case 0:
+                selectedQueue = cubesQueue;
+                SpawnCubes(selectedQueue);
+                break;
+            case 1:
+                selectedQueue = cookiesQueue;
+                SpawnCookies(selectedQueue);
+                break;
+            case 2:
+                selectedQueue = diskQueue;
+                SpawnDisks(selectedQueue);
+                break;
+            case 3:
+                selectedQueue = starQueue;
+                SpawnStars(selectedQueue);
+                break;
+            case 4:
+                selectedQueue = triangleQueue;
+                SpawnTriangles(selectedQueue);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void CreateObjectsFirstStart()
     {
         for (int i = 0; i < amountOfObject; i++)
         {
@@ -85,6 +158,26 @@ public class ObjectPooling : MonoBehaviour
             cubesInstantiate.transform.parent = cubesParent.transform;
             cubesInstantiate.gameObject.SetActive(false);
             cubesQueue.Enqueue(cubesInstantiate);
+
+            cookiesInstantiate = Instantiate(cookiePref);
+            cookiesInstantiate.transform.parent = cookiesParent.transform;
+            cookiesInstantiate.SetActive(false);
+            cookiesQueue.Enqueue(cookiesInstantiate);
+
+            disksInstantiate = Instantiate(diskPref);
+            disksInstantiate.transform.parent = disksParent.transform;
+            disksInstantiate.SetActive(false);
+            diskQueue.Enqueue(disksInstantiate);
+
+            starsInstantiate = Instantiate(starPref);
+            starsInstantiate.transform.parent = starsParent.transform;
+            starsInstantiate.SetActive(false);
+            starQueue.Enqueue(starsInstantiate);
+
+            trianglesInstantiate = Instantiate(trianglePref);
+            trianglesInstantiate.transform.parent = trianglesParent.transform;
+            trianglesInstantiate.SetActive(false);
+            triangleQueue.Enqueue(trianglesInstantiate);
 
         }
     }

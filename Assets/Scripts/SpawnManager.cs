@@ -8,7 +8,6 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] _objectsArray = new GameObject[5];
     int levelIndex;
     float spawnWaitingTime = 5.5f;
-    public bool isAppear = true;
     // Start is called before the first frame update
     void Start()
     {
