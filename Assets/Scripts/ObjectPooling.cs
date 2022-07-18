@@ -47,51 +47,18 @@ public class ObjectPooling : MonoBehaviour
     }
     private void Start()
     {
-        
-        SpawnCubes(cubesQueue);
+
+        RandomObjectSpawn();
     }
 
-    void SpawnCubes(Queue<GameObject> newQueue)
+    void SpawnObjects(Queue<GameObject> newQueue)
     {
-        newQueue = cubesQueue;
         GetFromPool(newQueue).transform.position = GetVector();
         GetFromPool(newQueue).SetActive(true);
         StartCoroutine("DelaySpawn");
         
     }
-    void SpawnCookies(Queue<GameObject> newQueue)
-    {
-        newQueue = cookiesQueue;
-        GetFromPool(newQueue).transform.position = GetVector();
-        GetFromPool(newQueue).SetActive(true);
-        StartCoroutine("DelaySpawn");
-    }
-    void SpawnDisks(Queue<GameObject> newQueue)
-    {
-        newQueue = diskQueue;
-        GetFromPool(newQueue).transform.position = GetVector();
-        GetFromPool(newQueue).SetActive(true);
-        StartCoroutine("DelaySpawn");
-
-    }
-    void SpawnStars(Queue<GameObject> newQueue)
-    {
-        newQueue = starQueue;
-        GetFromPool(newQueue).transform.position = GetVector();
-        GetFromPool(newQueue).SetActive(true);
-        StartCoroutine("DelaySpawn");
-
-    }
-    void SpawnTriangles(Queue<GameObject> newQueue)
-    {
-        newQueue = triangleQueue;
-        GetFromPool(newQueue).transform.position = GetVector();
-        GetFromPool(newQueue).SetActive(true);
-        StartCoroutine("DelaySpawn");
-
-    }
-
-
+    
     GameObject GetFromPool(Queue<GameObject> newQueue)
     {
         foreach (GameObject obj in newQueue)
@@ -121,28 +88,23 @@ public class ObjectPooling : MonoBehaviour
     void RandomObjectSpawn()
     {
         randomSelectNumber = Random.Range(0, typeOfObjects);
-        Queue<GameObject> selectedQueue = new Queue<GameObject>();
+       
         switch (randomSelectNumber)
         {
             case 0:
-                selectedQueue = cubesQueue;
-                SpawnCubes(selectedQueue);
+                SpawnObjects(cubesQueue);
                 break;
             case 1:
-                selectedQueue = cookiesQueue;
-                SpawnCookies(selectedQueue);
+                SpawnObjects(cookiesQueue);
                 break;
             case 2:
-                selectedQueue = diskQueue;
-                SpawnDisks(selectedQueue);
+                SpawnObjects(diskQueue);
                 break;
             case 3:
-                selectedQueue = starQueue;
-                SpawnStars(selectedQueue);
+                SpawnObjects(starQueue);
                 break;
             case 4:
-                selectedQueue = triangleQueue;
-                SpawnTriangles(selectedQueue);
+                SpawnObjects(triangleQueue);
                 break;
 
             default:

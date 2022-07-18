@@ -7,6 +7,11 @@ TagManager:
   - Trigger
   - Ground
   - LastTrigger
+  - CubeMoldTrigger
+  - CookieMoldTrigger
+  - DiskMoldTrigger
+  - StarMoldTrigger
+  - TriangleMoldTrigger
   layers:
   - Default
   - TransparentFX

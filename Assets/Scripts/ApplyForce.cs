@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ApplyForce : MonoBehaviour
 {
-    private Rigidbody myBody;
+    
     [SerializeField] float downSpeed;
     
     void Start()
     {
-        myBody = GetComponent<Rigidbody>();
+        
     }
 
 
     void FixedUpdate()
     {
-        //myBody.AddForce(Vector3.down * downSpeed * Time.deltaTime);
         transform.Translate(Vector3.down * downSpeed * Time.deltaTime);
     }
 
@@ -23,12 +22,10 @@ public class ApplyForce : MonoBehaviour
     {
        if (other.gameObject.CompareTag("Trigger"))
        {
-         Debug.Log("Triggered..");
          GetComponentInChildren<RotateObjects>().isTriggered = true;
         }
         else if (other.gameObject.CompareTag("LastTrigger"))
         {
-            Debug.Log("Last tiggered");
             gameObject.SetActive(false);
             GetComponentInChildren<RotateObjects>().isTriggered = true;
         }

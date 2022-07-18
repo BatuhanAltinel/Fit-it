@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3011539844078917684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4246678617667473439}
+  - component: {fileID: 4117954593828641643}
+  - component: {fileID: 6800949297783818637}
+  m_Layer: 0
+  m_Name: Trigger Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4246678617667473439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011539844078917684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9156696537375146316}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4117954593828641643
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011539844078917684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.1, z: 0.2}
+  m_Center: {x: 0, y: -0.13, z: 0}
+--- !u!114 &6800949297783818637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011539844078917684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597bd1e8e82057f43981ab9e2a033069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moldTag: StarMoldTrigger
 --- !u!1 &8690161131904643584
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39136142423146448d62c7ceeec49f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 220
+  rotateSpeed: 280
   isTriggered: 0
   yRotation: 0
   rotateDirection: 1
@@ -109,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8690161132469551998}
   - component: {fileID: 8690161132469551999}
-  - component: {fileID: 8690161132469551968}
+  - component: {fileID: 5619669516922950995}
   m_Layer: 0
   m_Name: Star Parent
   m_TagString: Untagged
@@ -145,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   downSpeed: 1.5
---- !u!54 &8690161132469551968
+--- !u!54 &5619669516922950995
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,28 +303,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1eecae870a3fd4dbd499d0b789425e, type: 3}
---- !u!1 &8383677549627825142 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cc1eecae870a3fd4dbd499d0b789425e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8690161132590524071}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9156696537375146316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc1eecae870a3fd4dbd499d0b789425e,
     type: 3}
   m_PrefabInstance: {fileID: 8690161132590524071}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &8690161132590524068
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8383677549627825142}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.318406, y: 0.39014256, z: 2.2009706}
-  m_Center: {x: -0.023897443, y: -0.016581755, z: -0.0057256417}
