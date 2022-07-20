@@ -47,7 +47,6 @@ public class ObjectPooling : MonoBehaviour
     }
     private void Start()
     {
-
         RandomObjectSpawn();
     }
 

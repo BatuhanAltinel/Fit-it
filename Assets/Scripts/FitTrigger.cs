@@ -34,13 +34,14 @@ public class FitTrigger : MonoBehaviour
         {
             Debug.Log("triggered " + moldTag + " mold.");
             isTriggered = true;
-            SoundManager.instance.PlaySmoothSwipe();
+            
         }
         if (other.gameObject.CompareTag("FitTrigger") && isTriggered)
         {
             Debug.Log("FÝT TRÝGGERED");
             fitParticle.Play();
-            //SoundEffect coin effect
+            SoundManager.instance.PlaySmoothSwipe();
+            SoundManager.instance.PlaycollectSound();
         }
     }
 
@@ -58,7 +59,6 @@ public class FitTrigger : MonoBehaviour
 
     IEnumerator WrongplaceDestroyObject()
     {
-        
         yield return new WaitForSeconds(0.5f);
         this.transform.parent.parent.gameObject.SetActive(false);
     }

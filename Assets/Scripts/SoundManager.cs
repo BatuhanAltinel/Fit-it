@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip smoothSwipeSound;
     public AudioClip bangSound;
+    public AudioClip collectSound;
     //public AudioClip backgroundSound;
 
     // Start is called before the first frame update
@@ -31,6 +32,10 @@ public class SoundManager : MonoBehaviour
     public void PlayBangSound()
     {
         audioSource.PlayOneShot(bangSound);
+    }
+    public void PlaycollectSound()
+    {
+        audioSource.PlayOneShot(collectSound);
     }
 
    
