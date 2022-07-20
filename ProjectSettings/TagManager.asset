@@ -12,6 +12,7 @@ TagManager:
   - DiskMoldTrigger
   - StarMoldTrigger
   - TriangleMoldTrigger
+  - FitTrigger
   layers:
   - Default
   - TransparentFX
