@@ -7,12 +7,16 @@ public class FitTrigger : MonoBehaviour
     public string moldTag;
     private bool isTriggered;
     public ParticleSystem fitParticle;
+    public ParticleSystem dontFitParticle;
     private float yAxisBoundary;
     // Start is called before the first frame update
     private void Awake()
     {
-        isTriggered = false;
         yAxisBoundary = -9.1f;
+    }
+    private void OnEnable()
+    {
+        isTriggered = false;
     }
     void Update()
     {
@@ -21,16 +25,17 @@ public class FitTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag(moldTag))
-        {
-            Debug.Log("triggered "+ moldTag +" mold.");
-            isTriggered = true;
-            //SoundEffect;
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag(moldTag))
+        {
+            Debug.Log("triggered " + moldTag + " mold.");
+            isTriggered = true;
+            SoundManager.instance.PlaySmoothSwipe();
+        }
         if (other.gameObject.CompareTag("FitTrigger") && isTriggered)
         {
             Debug.Log("FÝT TRÝGGERED");
@@ -44,14 +49,17 @@ public class FitTrigger : MonoBehaviour
         if (this.transform.position.y < yAxisBoundary && !isTriggered )
         {
             Debug.Log("dont fit the right place");
+            dontFitParticle.Play();
+            SoundManager.instance.PlayBangSound();
             StartCoroutine("WrongplaceDestroyObject");
+            isTriggered = true;
         }
     }
 
     IEnumerator WrongplaceDestroyObject()
     {
         
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         this.transform.parent.parent.gameObject.SetActive(false);
     }
 
