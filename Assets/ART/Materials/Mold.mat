@@ -86,7 +86,7 @@ Material:
     - _ZSmooth: -0.5
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9150943, g: 0.030215396, b: 0.30864388, a: 1}
+    - _Color: {r: 0.9622642, g: 0.23148806, b: 0.46208853, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.785, g: 0.785, b: 0.785, a: 1}
     - _OutlineColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
