@@ -32,13 +32,13 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * moveSpeed ,
                             transform.position.y, transform.position.z);
 
-        if (transform.position.x > 12.6f)
+        if (transform.position.x > 13.8f)
         {
-            this.transform.position = new Vector3(12.6f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(13.8f, transform.position.y, transform.position.z);
         }
-        else if (transform.position.x < -6.2f)
+        else if (transform.position.x < -7.4f)
         {
-            this.transform.position = new Vector3(-6.2f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(-7.4f, transform.position.y, transform.position.z);
         }
     }
 }
