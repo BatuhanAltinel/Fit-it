@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mold
-  m_Shader: {fileID: 4800000, guid: ccfc7d68845db8341944b3091b59be55, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 24a666c4cf4f5194ba2cdff51c1dc2f0, type: 3}
+  m_ShaderKeywords: OUTLINE_BLENDING
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -86,9 +86,9 @@ Material:
     - _ZSmooth: -0.5
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9622642, g: 0.23148806, b: 0.46208853, a: 1}
+    - _Color: {r: 1, g: 0.0603773, b: 0.35842982, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.785, g: 0.785, b: 0.785, a: 1}
-    - _OutlineColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
+    - _OutlineColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
     - _SColor: {r: 0.19499996, g: 0.19499996, b: 0.19499996, a: 1}
   m_BuildTextureStacks: []
