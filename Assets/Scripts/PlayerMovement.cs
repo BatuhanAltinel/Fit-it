@@ -7,13 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Touch touch;
     [SerializeField] private float moveSpeed = .01f;
-    private int directionValue;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -32,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * moveSpeed ,
                             transform.position.y, transform.position.z);
 
-        if (transform.position.x > 13.8f)
+        if (transform.position.x > 14.5f)
         {
-            this.transform.position = new Vector3(13.8f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(14.5f, transform.position.y, transform.position.z);
         }
-        else if (transform.position.x < -7.4f)
+        else if (transform.position.x < -8f)
         {
-            this.transform.position = new Vector3(-7.4f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(-8f, transform.position.y, transform.position.z);
         }
     }
 }

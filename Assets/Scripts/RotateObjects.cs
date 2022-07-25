@@ -12,15 +12,16 @@ public class RotateObjects : MonoBehaviour
     public float yRotation;
     public int rotateDirection =1;
     // Start is called before the first frame update
-    void Start()
-    {
-        isRotating = true;
-        isTriggered = false;
-    }
+    //void Start()
+    //{
+    //    isRotating = true;
+    //    isTriggered = false;
+    //}
     private void OnEnable()
     {
         isRotating = true;
         isTriggered = false;
+        this.gameObject.transform.GetComponent<MeshRenderer>().enabled = true;
     }
 
     void FixedUpdate()

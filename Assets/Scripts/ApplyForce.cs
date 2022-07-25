@@ -6,11 +6,6 @@ public class ApplyForce : MonoBehaviour
 {
     
     [SerializeField] float downSpeed;
-    
-    void Start()
-    {
-        
-    }
 
 
     void FixedUpdate()

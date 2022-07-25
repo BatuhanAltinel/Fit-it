@@ -52,7 +52,8 @@ public class FitTrigger : MonoBehaviour
             Debug.Log("dont fit the right place");
             dontFitParticle.Play();
             SoundManager.instance.PlayBangSound();
-            StartCoroutine("WrongplaceDestroyObject");
+            //StartCoroutine("WrongplaceDestroyObject");
+            this.transform.parent.GetComponent<MeshRenderer>().enabled = false;
             isTriggered = true;
         }
     }
