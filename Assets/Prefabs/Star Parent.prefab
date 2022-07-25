@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moldTag: StarMoldTrigger
-  fitParticle: {fileID: 141276207174450945}
+  fitParticle: {fileID: 8901496020251855018}
   dontFitParticle: {fileID: 6846889428512578481}
 --- !u!1 &8690161132469551969
 GameObject:
@@ -122,93 +122,80 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &141276207159593401
+--- !u!1001 &5115482780139605980
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 9156696537375146316}
     m_Modifications:
-    - target: {fileID: 114476, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
-      propertyPath: m_Name
-      value: FireworkYellow
-      objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.7071067
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 440448, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
+    - target: {fileID: 4428638273276718366, guid: 0bdef744b833fd94781b3bd0c5383c82,
+        type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 19980290, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19992370, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 199416912433227402, guid: 225085907981d1a4f9901b6ced5b2657,
+    - target: {fileID: 4428638273276940178, guid: 0bdef744b833fd94781b3bd0c5383c82,
         type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
+      propertyPath: m_Name
+      value: GoldCoinBlast
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 225085907981d1a4f9901b6ced5b2657, type: 3}
---- !u!198 &141276207174450945 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 0bdef744b833fd94781b3bd0c5383c82, type: 3}
+--- !u!198 &8901496020251855018 stripped
 ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19838648, guid: 225085907981d1a4f9901b6ced5b2657,
+  m_CorrespondingSourceObject: {fileID: 4428638273261471606, guid: 0bdef744b833fd94781b3bd0c5383c82,
     type: 3}
-  m_PrefabInstance: {fileID: 141276207159593401}
+  m_PrefabInstance: {fileID: 5115482780139605980}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6846889428530502727
 PrefabInstance:
@@ -223,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424984, guid: c05e92eaee7a00844867e5edc8e0dde1, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 424984, guid: c05e92eaee7a00844867e5edc8e0dde1, type: 3}
       propertyPath: m_LocalScale.x

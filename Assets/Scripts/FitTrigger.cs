@@ -58,10 +58,10 @@ public class FitTrigger : MonoBehaviour
         }
     }
 
-    IEnumerator WrongplaceDestroyObject()
-    {
-        yield return new WaitForSeconds(0.5f);
-        this.transform.parent.parent.gameObject.SetActive(false);
-    }
+    //IEnumerator WrongplaceDestroyObject()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    this.transform.parent.parent.gameObject.SetActive(false);
+    //}
 
 }
