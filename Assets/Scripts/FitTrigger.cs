@@ -42,6 +42,8 @@ public class FitTrigger : MonoBehaviour
             fitParticle.Play();
             SoundManager.instance.PlaySmoothSwipe();
             SoundManager.instance.PlaycollectSound();
+            LevelManager.levelManager.coin++;
+            LevelManager.levelManager.CoinCounter();
         }
     }
 
