@@ -45,26 +45,26 @@ public class FitTrigger : MonoBehaviour
                 LevelManager.levelManager.diskTaskCount--;
                 LevelManager.levelManager.WriteDisks();
             }
-            //if (this.gameObject.CompareTag("Cookie"))
-            //{
-            //    LevelManager.levelManager.cookieTaskCount--;
-            //    LevelManager.levelManager.WriteCookies();
-            //}
-            //if (this.gameObject.CompareTag("Star"))
-            //{
-            //    LevelManager.levelManager.starTaskCount--;
-            //    LevelManager.levelManager.WriteStars();
-            //}
-            //if (this.gameObject.CompareTag("Square"))
-            //{
-            //    LevelManager.levelManager.squareTaskCount--;
-            //    LevelManager.levelManager.WriteSquares();
-            //}
-            //if (this.gameObject.CompareTag("Triangle"))
-            //{
-            //    LevelManager.levelManager.triangleTaskCount--;
-            //    LevelManager.levelManager.WriteTriangles();
-            //}
+            if (this.gameObject.CompareTag("Cookie"))
+            {
+                LevelManager.levelManager.cookieTaskCount--;
+                LevelManager.levelManager.WriteCookies();
+            }
+            if (this.gameObject.CompareTag("Star"))
+            {
+                LevelManager.levelManager.starTaskCount--;
+                LevelManager.levelManager.WriteStars();
+            }
+            if (this.gameObject.CompareTag("Square"))
+            {
+                LevelManager.levelManager.squareTaskCount--;
+                LevelManager.levelManager.WriteSquares();
+            }
+            if (this.gameObject.CompareTag("Triangle"))
+            {
+                LevelManager.levelManager.triangleTaskCount--;
+                LevelManager.levelManager.WriteTriangles();
+            }
         }
     }
 
