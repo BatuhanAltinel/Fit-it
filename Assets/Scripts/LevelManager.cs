@@ -9,8 +9,15 @@ public class LevelManager : MonoBehaviour
     private int maxTaskCount;
     private int maxObjectsCount;
     private int taskCount;
+    [HideInInspector] public int diskTaskCount;
+    [HideInInspector] public int squareTaskCount;
+    [HideInInspector] public int starTaskCount;
+    [HideInInspector] public int cookieTaskCount;
+    [HideInInspector] public int triangleTaskCount;
 
-    public int coin;
+
+
+    [HideInInspector]public int coin;
     public Text coinText;
     public Text diskText;
     public Text cookieText;
@@ -33,13 +40,13 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
-        maxTaskCount = 4;
+        maxTaskCount = 9;
 
-        DiskTask(maxTaskCount);
-        SquareTask(maxTaskCount);
-        CookieTask(maxTaskCount);
-        StarTask(maxTaskCount);
-        TriangleTask(maxTaskCount);
+        DiskTask();
+        //SquareTask();
+        //CookieTask();
+        //StarTask();
+        //TriangleTask();
     }
 
     public void CoinCounter()
@@ -47,34 +54,55 @@ public class LevelManager : MonoBehaviour
         coinText.text = "x " + coin;
     }
 
-    public void TaskGeneretor(int maxTaskCount)
+    public void TaskGeneretor()
     {
         maxObjectsCount = Random.Range(10, 18);
         taskCount = Random.Range(1, maxTaskCount);
     }
-    void DiskTask(int difficulty)
+    public void DiskTask()
     {
-        TaskGeneretor(difficulty);
-        diskText.text = taskCount + "/" + maxObjectsCount;
+        TaskGeneretor();
+        diskTaskCount = taskCount;
+        WriteDisks();
     }
-    void SquareTask(int difficulty)
+    public void WriteDisks()
     {
-        TaskGeneretor(difficulty);
-        squareText.text = taskCount + "/" + maxObjectsCount;
+        diskText.text = diskTaskCount + "/" + maxObjectsCount;
     }
-    void StarTask(int difficulty)
-    {
-        TaskGeneretor(difficulty);
-        starText.text = taskCount + "/" + maxObjectsCount;
-    }
-    void CookieTask(int difficulty)
-    {
-        TaskGeneretor(difficulty);
-        cookieText.text = taskCount + "/" + maxObjectsCount;
-    }
-    void TriangleTask(int difficulty)
-    {
-        TaskGeneretor(difficulty);
-        triangleText.text = taskCount + "/" + maxObjectsCount;
-    }
+    //public void SquareTask()
+    //{
+    //    TaskGeneretor(squareTaskCount);
+    //    squareText.text = taskCount + "/" + maxObjectsCount;
+    //}
+    //public void WriteSquares()
+    //{
+    //    squareText.text = diskTaskCount + "/" + maxObjectsCount;
+    //}
+    //public void StarTask()
+    //{
+    //    TaskGeneretor(starTaskCount);
+    //    starText.text = taskCount + "/" + maxObjectsCount;
+    //}
+    //public void WriteStars()
+    //{
+    //    starText.text = diskTaskCount + "/" + maxObjectsCount;
+    //}
+    //public void CookieTask()
+    //{
+    //    TaskGeneretor(cookieTaskCount);
+    //    cookieText.text = taskCount + "/" + maxObjectsCount;
+    //}
+    //public void WriteCookies()
+    //{
+    //    cookieText.text = diskTaskCount + "/" + maxObjectsCount;
+    //}
+    //public void TriangleTask()
+    //{
+    //    TaskGeneretor(triangleTaskCount);
+    //    triangleText.text = taskCount + "/" + maxObjectsCount;
+    //}
+    //public void WriteTriangles()
+    //{
+    //    triangleText.text = diskTaskCount + "/" + maxObjectsCount;
+    //}
 }
