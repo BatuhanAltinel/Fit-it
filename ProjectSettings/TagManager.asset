@@ -13,6 +13,11 @@ TagManager:
   - StarMoldTrigger
   - TriangleMoldTrigger
   - FitTrigger
+  - Disk
+  - Cookie
+  - Star
+  - Triangle
+  - Square
   layers:
   - Default
   - TransparentFX

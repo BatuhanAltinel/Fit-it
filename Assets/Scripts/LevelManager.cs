@@ -43,11 +43,11 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(levelManager);
 
         coin = 0;
+        maxTaskCount = 9;
+
     }
     private void Start()
     {
-        maxTaskCount = 9;
-
         DiskTask();
         SquareTask();
         CookieTask();
