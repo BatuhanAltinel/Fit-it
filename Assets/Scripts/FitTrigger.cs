@@ -43,26 +43,31 @@ public class FitTrigger : MonoBehaviour
             if (this.gameObject.CompareTag("Disk"))
             {
                 LevelManager.levelManager.diskTaskCount--;
+                LevelManager.levelManager.maxDiskCount--;
                 LevelManager.levelManager.WriteDisks();
             }
             if (this.gameObject.CompareTag("Cookie"))
             {
                 LevelManager.levelManager.cookieTaskCount--;
+                LevelManager.levelManager.maxCookieCount--;
                 LevelManager.levelManager.WriteCookies();
             }
             if (this.gameObject.CompareTag("Star"))
             {
                 LevelManager.levelManager.starTaskCount--;
+                LevelManager.levelManager.maxStarCount--;
                 LevelManager.levelManager.WriteStars();
             }
             if (this.gameObject.CompareTag("Square"))
             {
                 LevelManager.levelManager.squareTaskCount--;
+                LevelManager.levelManager.maxSquareCount--;
                 LevelManager.levelManager.WriteSquares();
             }
             if (this.gameObject.CompareTag("Triangle"))
             {
                 LevelManager.levelManager.triangleTaskCount--;
+                LevelManager.levelManager.maxTriangleCount--;
                 LevelManager.levelManager.WriteTriangles();
             }
         }
@@ -77,7 +82,34 @@ public class FitTrigger : MonoBehaviour
             SoundManager.instance.PlayBangSound();
             this.transform.parent.GetComponent<MeshRenderer>().enabled = false;
             isTriggered = true;
+
+            if (this.gameObject.CompareTag("Disk"))
+            {
+                LevelManager.levelManager.maxDiskCount--;
+                LevelManager.levelManager.WriteDisks();
+            }
+            if (this.gameObject.CompareTag("Cookie"))
+            {
+                LevelManager.levelManager.maxCookieCount--;
+                LevelManager.levelManager.WriteCookies();
+            }
+            if (this.gameObject.CompareTag("Star"))
+            {
+                LevelManager.levelManager.maxStarCount--;
+                LevelManager.levelManager.WriteStars();
+            }
+            if (this.gameObject.CompareTag("Square"))
+            {
+                LevelManager.levelManager.maxSquareCount--;
+                LevelManager.levelManager.WriteSquares();
+            }
+            if (this.gameObject.CompareTag("Triangle"))
+            {
+                LevelManager.levelManager.maxTriangleCount--;
+                LevelManager.levelManager.WriteTriangles();
+            }
         }
+        
     }
 
 }

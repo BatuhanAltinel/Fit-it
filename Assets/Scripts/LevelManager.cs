@@ -15,6 +15,12 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int cookieTaskCount;
     [HideInInspector] public int triangleTaskCount;
 
+    [HideInInspector] public int maxDiskCount;
+    [HideInInspector] public int maxSquareCount;
+    [HideInInspector] public int maxStarCount;
+    [HideInInspector] public int maxCookieCount;
+    [HideInInspector] public int maxTriangleCount;
+
 
 
     [HideInInspector]public int coin;
@@ -63,50 +69,76 @@ public class LevelManager : MonoBehaviour
     {
         TaskGeneretor();
         diskTaskCount = taskCount;
+        maxDiskCount = maxObjectsCount;
         WriteDisks();
     }
     public void WriteDisks()
     {
-        diskText.text = diskTaskCount + "/" + maxObjectsCount;
+        if (diskTaskCount <= 0)
+        {
+            diskTaskCount = 0;
+            //dont spawn any disk.
+        }
+        diskText.text = diskTaskCount + "/" + maxDiskCount;
     }
     public void SquareTask()
     {
         TaskGeneretor();
         squareTaskCount = taskCount;
+        maxSquareCount = maxObjectsCount;
         WriteSquares();
     }
     public void WriteSquares()
     {
-        squareText.text = squareTaskCount + "/" + maxObjectsCount;
+        if (squareTaskCount <= 0)
+        {
+            squareTaskCount = 0;
+        }
+        squareText.text = squareTaskCount + "/" + maxSquareCount;
     }
     public void StarTask()
     {
         TaskGeneretor();
         starTaskCount = taskCount;
+        maxStarCount = maxObjectsCount;
         WriteStars();
     }
     public void WriteStars()
     {
-        starText.text = starTaskCount + "/" + maxObjectsCount;
+        if (starTaskCount <= 0)
+        {
+            starTaskCount = 0;
+        }
+        starText.text = starTaskCount + "/" + maxStarCount;
     }
     public void CookieTask()
     {
         TaskGeneretor();
         cookieTaskCount = taskCount;
+        maxCookieCount = maxObjectsCount;
         WriteCookies();
     }
     public void WriteCookies()
     {
-        cookieText.text = cookieTaskCount + "/" + maxObjectsCount;
+        if (cookieTaskCount <= 0)
+        {
+            cookieTaskCount = 0;
+        }
+        cookieText.text = cookieTaskCount + "/" + maxCookieCount;
     }
     public void TriangleTask()
     {
         TaskGeneretor();
         triangleTaskCount = taskCount;
+        maxTriangleCount = maxObjectsCount;
         WriteTriangles();
     }
     public void WriteTriangles()
     {
-        triangleText.text = triangleTaskCount + "/" + maxObjectsCount;
+        if (triangleTaskCount <= 0)
+        {
+            triangleTaskCount = 0;
+        }
+        triangleText.text = triangleTaskCount + "/" + maxTriangleCount;
     }
 }
