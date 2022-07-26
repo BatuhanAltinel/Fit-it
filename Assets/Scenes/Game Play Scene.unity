@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 1035282268}
   - component: {fileID: 1035282267}
   m_Layer: 5
-  m_Name: Circle Text
+  m_Name: Disk Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1894,6 +1894,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: 0
   coinText: {fileID: 2038765897}
+  diskText: {fileID: 1035282267}
+  cookieText: {fileID: 2045167932}
+  squareText: {fileID: 1070340447}
+  triangleText: {fileID: 141089857}
+  starText: {fileID: 587632361}
 --- !u!1 &1357064575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,7 +2373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834390592}
   m_Layer: 5
-  m_Name: Circle Tasks
+  m_Name: Disk Tasks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2682,7 +2687,7 @@ GameObject:
   - component: {fileID: 1997160119}
   - component: {fileID: 1997160118}
   m_Layer: 5
-  m_Name: Circle Icon
+  m_Name: Disk Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
