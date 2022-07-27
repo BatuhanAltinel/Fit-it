@@ -30,6 +30,9 @@ public class LevelManager : MonoBehaviour
     public Text squareText;
     public Text triangleText;
     public Text starText;
+
+    public GameObject gameOverPanel;
+    public GameObject levelCompletePanel;
     
     // Start is called before the first frame update
     void Awake()
@@ -39,11 +42,10 @@ public class LevelManager : MonoBehaviour
             levelManager = this;
         }
         else
-            Destroy(levelManager);
-        DontDestroyOnLoad(levelManager);
+            Destroy(gameObject);
 
         coin = 0;
-        maxTaskCount = 9;
+        maxTaskCount = 6;
 
     }
     private void Start()
@@ -62,7 +64,7 @@ public class LevelManager : MonoBehaviour
 
     public void TaskGeneretor()
     {
-        maxObjectsCount = Random.Range(10, 18);
+        maxObjectsCount = Random.Range(6, 11);
         taskCount = Random.Range(1, maxTaskCount);
     }
     public void DiskTask()
@@ -78,6 +80,12 @@ public class LevelManager : MonoBehaviour
         {
             diskTaskCount = 0;
             //dont spawn any disk.
+        }
+        if (maxDiskCount < diskTaskCount)
+        {
+            maxDiskCount = 0;
+            gameOverPanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
         diskText.text = diskTaskCount + "/" + maxDiskCount;
     }
@@ -141,4 +149,5 @@ public class LevelManager : MonoBehaviour
         }
         triangleText.text = triangleTaskCount + "/" + maxTriangleCount;
     }
+
 }
