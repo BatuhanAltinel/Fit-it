@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel;
+    private int levelCompleteNum = 0;
     
     // Start is called before the first frame update
     void Awake()
@@ -55,6 +56,14 @@ public class LevelManager : MonoBehaviour
         CookieTask();
         StarTask();
         TriangleTask();
+    }
+    private void Update()
+    {
+        if (levelCompleteNum >= 5)
+        {
+            levelCompletePanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void CoinCounter()
@@ -79,7 +88,9 @@ public class LevelManager : MonoBehaviour
         if (diskTaskCount <= 0)
         {
             diskTaskCount = 0;
-            //dont spawn any disk.
+            levelCompleteNum++;
+            // disk uý panel change green tick.
+            // dont spawn disk again until load gameplay scene.
         }
         if (maxDiskCount < diskTaskCount)
         {
@@ -101,6 +112,13 @@ public class LevelManager : MonoBehaviour
         if (squareTaskCount <= 0)
         {
             squareTaskCount = 0;
+            levelCompleteNum++;
+        }
+        if (maxSquareCount < squareTaskCount)
+        {
+            maxSquareCount = 0;
+            gameOverPanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
         squareText.text = squareTaskCount + "/" + maxSquareCount;
     }
@@ -116,6 +134,13 @@ public class LevelManager : MonoBehaviour
         if (starTaskCount <= 0)
         {
             starTaskCount = 0;
+            levelCompleteNum++;
+        }
+        if (maxStarCount < starTaskCount)
+        {
+            maxStarCount = 0;
+            gameOverPanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
         starText.text = starTaskCount + "/" + maxStarCount;
     }
@@ -131,6 +156,13 @@ public class LevelManager : MonoBehaviour
         if (cookieTaskCount <= 0)
         {
             cookieTaskCount = 0;
+            levelCompleteNum++;
+        }
+        if (maxCookieCount < cookieTaskCount)
+        {
+            maxCookieCount = 0;
+            gameOverPanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
         cookieText.text = cookieTaskCount + "/" + maxCookieCount;
     }
@@ -146,6 +178,13 @@ public class LevelManager : MonoBehaviour
         if (triangleTaskCount <= 0)
         {
             triangleTaskCount = 0;
+            levelCompleteNum++;
+        }
+        if (maxTriangleCount < triangleTaskCount)
+        {
+            maxTriangleCount = 0;
+            gameOverPanel.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
         triangleText.text = triangleTaskCount + "/" + maxTriangleCount;
     }

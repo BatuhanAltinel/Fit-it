@@ -29,7 +29,7 @@ public class ObjectPooling : MonoBehaviour
     private GameObject trianglesInstantiate = null;
 
     private int amountOfObject = 4;
-    private int typeOfObjects = 3;
+    private int typeOfObjects = 5;
     private float spawnWaitingTime = 5.5f;
     private int randomSelectNumber;
 
@@ -86,7 +86,7 @@ public class ObjectPooling : MonoBehaviour
 
     void RandomObjectSpawn()
     {
-        randomSelectNumber = Random.Range(2, typeOfObjects);
+        randomSelectNumber = Random.Range(0, typeOfObjects);
        
         switch (randomSelectNumber)
         {
