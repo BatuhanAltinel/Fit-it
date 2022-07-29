@@ -85,12 +85,12 @@ public class LevelManager : MonoBehaviour
     }
     public void WriteDisks()
     {
-        if (diskTaskCount <= 0)
+        if (diskTaskCount == 0)
         {
-            diskTaskCount = 0;
             levelCompleteNum++;
+            diskTaskCount = -1;
+            GameManager.gameManager.GetComponent<ObjectPooling>().isDiskDone = true;
             // disk uý panel change green tick.
-            // dont spawn disk again until load gameplay scene.
         }
         if (maxDiskCount < diskTaskCount)
         {
@@ -109,10 +109,11 @@ public class LevelManager : MonoBehaviour
     }
     public void WriteSquares()
     {
-        if (squareTaskCount <= 0)
+        if (squareTaskCount == 0)
         {
-            squareTaskCount = 0;
             levelCompleteNum++;
+            squareTaskCount = -1;
+            GameManager.gameManager.GetComponent<ObjectPooling>().isCubeDone = true;
         }
         if (maxSquareCount < squareTaskCount)
         {
@@ -131,10 +132,11 @@ public class LevelManager : MonoBehaviour
     }
     public void WriteStars()
     {
-        if (starTaskCount <= 0)
+        if (starTaskCount == 0)
         {
-            starTaskCount = 0;
             levelCompleteNum++;
+            starTaskCount = -1;
+            GameManager.gameManager.GetComponent<ObjectPooling>().isStarDone = true;
         }
         if (maxStarCount < starTaskCount)
         {
@@ -153,10 +155,11 @@ public class LevelManager : MonoBehaviour
     }
     public void WriteCookies()
     {
-        if (cookieTaskCount <= 0)
+        if (cookieTaskCount == 0)
         {
-            cookieTaskCount = 0;
             levelCompleteNum++;
+            cookieTaskCount = -1;
+            GameManager.gameManager.GetComponent<ObjectPooling>().isCookieDone = true;
         }
         if (maxCookieCount < cookieTaskCount)
         {
@@ -175,10 +178,11 @@ public class LevelManager : MonoBehaviour
     }
     public void WriteTriangles()
     {
-        if (triangleTaskCount <= 0)
+        if (triangleTaskCount == 0)
         {
-            triangleTaskCount = 0;
             levelCompleteNum++;
+            triangleTaskCount = -1;
+            GameManager.gameManager.GetComponent<ObjectPooling>().isTriangelDone = true;
         }
         if (maxTriangleCount < triangleTaskCount)
         {

@@ -28,6 +28,12 @@ public class ObjectPooling : MonoBehaviour
     private GameObject starsInstantiate = null;
     private GameObject trianglesInstantiate = null;
 
+    public bool isCubeDone;
+    public bool isDiskDone;
+    public bool isStarDone;
+    public bool isCookieDone;
+    public bool isTriangelDone;
+
     private int amountOfObject = 4;
     private int typeOfObjects = 5;
     private float spawnWaitingTime = 5.5f;
@@ -47,6 +53,11 @@ public class ObjectPooling : MonoBehaviour
     }
     private void Start()
     {
+        isCubeDone = false;
+        isStarDone = false;
+        isDiskDone = false;
+        isCookieDone = false;
+        isTriangelDone = false;
         RandomObjectSpawn();
     }
 
@@ -91,19 +102,48 @@ public class ObjectPooling : MonoBehaviour
         switch (randomSelectNumber)
         {
             case 0:
-                SpawnObjects(cubesQueue);
+                if (!isCubeDone)
+                {
+                    SpawnObjects(cubesQueue);
+                }
+                else
+                    RandomObjectSpawn();
                 break;
             case 1:
-                SpawnObjects(cookiesQueue);
+                if (!isCookieDone)
+                {
+                    SpawnObjects(cookiesQueue);
+                }
+                else
+                    RandomObjectSpawn();
+                
                 break;
             case 2:
-                SpawnObjects(diskQueue);
+                if (!isDiskDone)
+                {
+                    SpawnObjects(diskQueue);
+                }
+                else
+                    RandomObjectSpawn();
+                
                 break;
             case 3:
-                SpawnObjects(starQueue);
+                if (!isStarDone)
+                {
+                    SpawnObjects(starQueue);
+                }
+                else
+                    RandomObjectSpawn();
+                
                 break;
             case 4:
-                SpawnObjects(triangleQueue);
+                if (!isTriangelDone)
+                {
+                    SpawnObjects(triangleQueue);
+                }
+                else
+                    RandomObjectSpawn();
+                
                 break;
 
             default:
