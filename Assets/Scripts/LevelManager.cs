@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel;
-    private int levelCompleteNum = 0;
+    public int levelCompleteNum = 0;
     
     // Start is called before the first frame update
     void Awake()
@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
         if (levelCompleteNum >= 5)
         {
             levelCompletePanel.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            levelCompleteNum = 0;
         }
     }
 

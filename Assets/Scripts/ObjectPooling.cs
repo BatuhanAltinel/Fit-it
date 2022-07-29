@@ -98,56 +98,58 @@ public class ObjectPooling : MonoBehaviour
     void RandomObjectSpawn()
     {
         randomSelectNumber = Random.Range(0, typeOfObjects);
-       
-        switch (randomSelectNumber)
+        if (LevelManager.levelManager.levelCompleteNum < 5)
         {
-            case 0:
-                if (!isCubeDone)
-                {
-                    SpawnObjects(cubesQueue);
-                }
-                else
-                    RandomObjectSpawn();
-                break;
-            case 1:
-                if (!isCookieDone)
-                {
-                    SpawnObjects(cookiesQueue);
-                }
-                else
-                    RandomObjectSpawn();
-                
-                break;
-            case 2:
-                if (!isDiskDone)
-                {
-                    SpawnObjects(diskQueue);
-                }
-                else
-                    RandomObjectSpawn();
-                
-                break;
-            case 3:
-                if (!isStarDone)
-                {
-                    SpawnObjects(starQueue);
-                }
-                else
-                    RandomObjectSpawn();
-                
-                break;
-            case 4:
-                if (!isTriangelDone)
-                {
-                    SpawnObjects(triangleQueue);
-                }
-                else
-                    RandomObjectSpawn();
-                
-                break;
+            switch (randomSelectNumber)
+            {
+                case 0:
+                    if (!isCubeDone)
+                    {
+                        SpawnObjects(cubesQueue);
+                    }
+                    else
+                        RandomObjectSpawn();
+                    break;
+                case 1:
+                    if (!isCookieDone)
+                    {
+                        SpawnObjects(cookiesQueue);
+                    }
+                    else
+                        RandomObjectSpawn();
 
-            default:
-                break;
+                    break;
+                case 2:
+                    if (!isDiskDone)
+                    {
+                        SpawnObjects(diskQueue);
+                    }
+                    else
+                        RandomObjectSpawn();
+
+                    break;
+                case 3:
+                    if (!isStarDone)
+                    {
+                        SpawnObjects(starQueue);
+                    }
+                    else
+                        RandomObjectSpawn();
+
+                    break;
+                case 4:
+                    if (!isTriangelDone)
+                    {
+                        SpawnObjects(triangleQueue);
+                    }
+                    else
+                        RandomObjectSpawn();
+
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 
