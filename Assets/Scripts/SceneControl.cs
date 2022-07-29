@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SceneControl : MonoBehaviour
 {
+   
 
     public void StartGame()
     {

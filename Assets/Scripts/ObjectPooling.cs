@@ -28,11 +28,11 @@ public class ObjectPooling : MonoBehaviour
     private GameObject starsInstantiate = null;
     private GameObject trianglesInstantiate = null;
 
-    public bool isCubeDone;
-    public bool isDiskDone;
-    public bool isStarDone;
-    public bool isCookieDone;
-    public bool isTriangelDone;
+    [HideInInspector] public bool isCubeDone;
+    [HideInInspector] public bool isDiskDone;
+    [HideInInspector] public bool isStarDone;
+    [HideInInspector] public bool isCookieDone;
+    [HideInInspector] public bool isTriangelDone;
 
     private int amountOfObject = 4;
     private int typeOfObjects = 5;

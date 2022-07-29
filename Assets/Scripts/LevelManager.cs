@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel;
-    public int levelCompleteNum = 0;
+    [HideInInspector] public int levelCompleteNum = 0;
     
     // Start is called before the first frame update
     void Awake()
@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        coin = 0;
+        coin = DataManager.instance.gameCoin;
         maxTaskCount = 6;
 
     }
@@ -192,5 +192,14 @@ public class LevelManager : MonoBehaviour
         }
         triangleText.text = triangleTaskCount + "/" + maxTriangleCount;
     }
+
+    //public void SaveCoin()
+    //{
+    //    SaveSystem.SaveCoin(this);
+    //}
+    //public void LoadCoin()
+    //{
+    //    SaveSystem.LoadCoin();
+    //}
 
 }
