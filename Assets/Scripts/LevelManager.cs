@@ -32,7 +32,12 @@ public class LevelManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel;
     [HideInInspector] public int levelCompleteNum = 0;
-    
+
+    private bool isCubeOver;
+    private bool isDiskOver;
+    private bool isStarOver;
+    private bool isCookieOver;
+    private bool isTriangleOver;
     // Start is called before the first frame update
     void Awake()
     {
@@ -89,9 +94,10 @@ public class LevelManager : MonoBehaviour
             levelCompleteNum++;
             diskTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isDiskDone = true;
+            isDiskOver = true;
             // disk uý panel change green tick.
         }
-        if (maxDiskCount < diskTaskCount)
+        if (maxDiskCount < diskTaskCount && !isDiskOver)
         {
             maxDiskCount = 0;
             gameOverPanel.gameObject.SetActive(true);
@@ -113,8 +119,9 @@ public class LevelManager : MonoBehaviour
             levelCompleteNum++;
             squareTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isCubeDone = true;
+            isCubeOver = true;
         }
-        if (maxSquareCount < squareTaskCount)
+        if (maxSquareCount < squareTaskCount && !isCubeOver)
         {
             maxSquareCount = 0;
             gameOverPanel.gameObject.SetActive(true);
@@ -136,8 +143,9 @@ public class LevelManager : MonoBehaviour
             levelCompleteNum++;
             starTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isStarDone = true;
+            isStarOver = true;
         }
-        if (maxStarCount < starTaskCount)
+        if (maxStarCount < starTaskCount && !isStarOver)
         {
             maxStarCount = 0;
             gameOverPanel.gameObject.SetActive(true);
@@ -159,8 +167,9 @@ public class LevelManager : MonoBehaviour
             levelCompleteNum++;
             cookieTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isCookieDone = true;
+            isCookieOver = true;
         }
-        if (maxCookieCount < cookieTaskCount)
+        if (maxCookieCount < cookieTaskCount && !isCookieOver)
         {
             maxCookieCount = 0;
             gameOverPanel.gameObject.SetActive(true);
@@ -182,8 +191,9 @@ public class LevelManager : MonoBehaviour
             levelCompleteNum++;
             triangleTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isTriangelDone = true;
+            isTriangleOver = true;
         }
-        if (maxTriangleCount < triangleTaskCount)
+        if (maxTriangleCount < triangleTaskCount && !isTriangleOver)
         {
             maxTriangleCount = 0;
             gameOverPanel.gameObject.SetActive(true);
@@ -191,14 +201,5 @@ public class LevelManager : MonoBehaviour
         }
         triangleText.text = triangleTaskCount + "/" + maxTriangleCount;
     }
-
-    //public void SaveCoin()
-    //{
-    //    SaveSystem.SaveCoin(this);
-    //}
-    //public void LoadCoin()
-    //{
-    //    SaveSystem.LoadCoin();
-    //}
 
 }
