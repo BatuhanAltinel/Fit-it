@@ -22,8 +22,6 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int maxTriangleCount;
 
 
-
-    [HideInInspector]public int coin;
     public Text coinText;
     public Text diskText;
     public Text cookieText;
@@ -45,8 +43,9 @@ public class LevelManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        coin = DataManager.instance.gameCoin;
         maxTaskCount = 6;
+        DataManager.instance.LoadGameData();
+        CoinCounter();
 
     }
     private void Start()
@@ -68,7 +67,7 @@ public class LevelManager : MonoBehaviour
 
     public void CoinCounter()
     {
-        coinText.text = "x " + coin;
+        coinText.text = "x " + DataManager.instance.gameCoin;
     }
 
     public void TaskGeneretor()

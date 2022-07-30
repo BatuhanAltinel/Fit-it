@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour
     private SaveData saveData;
 
     [HideInInspector] public int gameCoin;
+    private string gameDataPath = "/coinData.batu";
     // Start is called before the first frame update
     void Awake()
     {
@@ -20,7 +21,7 @@ public class DataManager : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log(Application.persistentDataPath + "/coinData.dat");
+        Debug.Log(Application.persistentDataPath + gameDataPath);
     }
     void MakeSingleton()
     {
@@ -44,7 +45,7 @@ public class DataManager : MonoBehaviour
 
             saveData = new SaveData();
 
-            saveData.coin = gameCoin;
+            saveData.Coin = gameCoin;
             SaveGameData();
         }
     }
@@ -57,11 +58,11 @@ public class DataManager : MonoBehaviour
         {
             BinaryFormatter bf = new BinaryFormatter();
 
-            file = File.Create(Application.persistentDataPath + "/coinData.dat");
+            file = File.Create(Application.persistentDataPath + gameDataPath);
 
             if (saveData != null)
             {
-                saveData.coin = gameCoin;
+                saveData.Coin = gameCoin;
 
                 bf.Serialize(file, saveData);
             }
@@ -80,7 +81,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    void LoadGameData()
+    public void LoadGameData()
     {
         FileStream file = null;
 
@@ -88,13 +89,13 @@ public class DataManager : MonoBehaviour
         {
             BinaryFormatter bf = new BinaryFormatter();
 
-            file = File.Open(Application.persistentDataPath + "/coinData.dat",FileMode.Open);
+            file = File.Open(Application.persistentDataPath + gameDataPath, FileMode.Open);
 
             saveData = (SaveData)bf.Deserialize(file);
 
             if (saveData != null)
             {
-                gameCoin = saveData.coin;
+                gameCoin = saveData.Coin;
             }
         }
         catch (Exception)

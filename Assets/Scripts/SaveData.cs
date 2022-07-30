@@ -9,17 +9,19 @@ using System.Runtime.Serialization.Formatters.Binary;
 [Serializable]
 public class SaveData
 {
-    public int coin;
+    private int coin;
 
-    //public int GetCoin
-    //{
-    //    get{
-    //        return coin;
-    //    }
-    //    set{
-    //        coin = value;
-    //    }
-    //}
-    
-    
+    public int Coin
+    {
+        get
+        {
+            return coin;
+        }
+        set
+        {
+            coin = value;
+        }
+    }
+
+
 }

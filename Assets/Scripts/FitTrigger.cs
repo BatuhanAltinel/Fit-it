@@ -37,9 +37,10 @@ public class FitTrigger : MonoBehaviour
             fitParticle.Play();
             SoundManager.instance.PlaySmoothSwipe();
             SoundManager.instance.PlaycollectSound();
-            LevelManager.levelManager.coin++;
+            DataManager.instance.gameCoin++;
             LevelManager.levelManager.CoinCounter();
-            
+            DataManager.instance.SaveGameData();
+
             if (this.gameObject.CompareTag("Disk"))
             {
                 LevelManager.levelManager.diskTaskCount--;
