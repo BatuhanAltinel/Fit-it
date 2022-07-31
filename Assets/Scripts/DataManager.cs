@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour
     private SaveData saveData;
 
     [HideInInspector] public int gameCoin;
+    [HideInInspector] public int slideNum;
     private string gameDataPath = "/coinData.batu";
     // Start is called before the first frame update
     void Awake()
@@ -42,10 +43,12 @@ public class DataManager : MonoBehaviour
         if (saveData == null)
         {
             gameCoin = 0;
+            slideNum = 0;
 
             saveData = new SaveData();
 
             saveData.Coin = gameCoin;
+            saveData.IsSlide = slideNum;
             SaveGameData();
         }
     }
@@ -63,6 +66,11 @@ public class DataManager : MonoBehaviour
             if (saveData != null)
             {
                 saveData.Coin = gameCoin;
+                if (GameManager.gameManager.isGameStarted)
+                {
+                    slideNum = 1;
+                    saveData.IsSlide = slideNum;
+                }
 
                 bf.Serialize(file, saveData);
             }
@@ -96,6 +104,7 @@ public class DataManager : MonoBehaviour
             if (saveData != null)
             {
                 gameCoin = saveData.Coin;
+                slideNum = saveData.IsSlide;
             }
         }
         catch (Exception)

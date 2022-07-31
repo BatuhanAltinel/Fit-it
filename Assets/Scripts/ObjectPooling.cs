@@ -37,7 +37,7 @@ public class ObjectPooling : MonoBehaviour
     private int amountOfObject = 4;
     private int typeOfObjects = 5;
     private float spawnWaitingTime = 5.5f;
-    private int randomSelectNumber;
+    //private int randomSelectNumber;
 
 
     
@@ -58,8 +58,16 @@ public class ObjectPooling : MonoBehaviour
         isDiskDone = false;
         isCookieDone = false;
         isTriangelDone = false;
-        RandomObjectSpawn();
     }
+    private void Update()
+    {
+        if (GameManager.gameManager.isGameStarted)
+        {
+            RandomObjectSpawn();
+            GameManager.gameManager.isGameStarted = false;
+        }
+    }
+
 
     void SpawnObjects(Queue<GameObject> newQueue)
     {
@@ -92,12 +100,17 @@ public class ObjectPooling : MonoBehaviour
     IEnumerator DelaySpawn()
     {
         yield return new WaitForSeconds(spawnWaitingTime);
-        StartCoroutine("RandomObjectSpawn");
+        if (LevelManager.levelManager.levelCompleteNum < 5)
+        {
+            StartCoroutine("RandomObjectSpawn");
+        }
+        else
+            StopCoroutine("RandomObjectSpawn");
     }
 
     void RandomObjectSpawn()
     {
-        randomSelectNumber = Random.Range(0, typeOfObjects);
+        int randomSelectNumber = Random.Range(0, typeOfObjects);
         if (LevelManager.levelManager.levelCompleteNum < 5)
         {
             switch (randomSelectNumber)
@@ -151,6 +164,8 @@ public class ObjectPooling : MonoBehaviour
                     break;
             }
         }
+            
+        
     }
 
     private void CreateObjectsFirstStart()

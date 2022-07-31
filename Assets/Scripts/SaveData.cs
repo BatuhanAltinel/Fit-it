@@ -10,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveData
 {
     private int coin;
+    private int isSlide;
 
     public int Coin
     {
@@ -21,6 +22,11 @@ public class SaveData
         {
             coin = value;
         }
+    }
+    public int IsSlide
+    {
+        get{ return isSlide;}
+        set{ isSlide = value; }
     }
 
 

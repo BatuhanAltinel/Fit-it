@@ -67,6 +67,7 @@ public class LevelManager : MonoBehaviour
         {
             levelCompletePanel.gameObject.SetActive(true);
             levelCompleteNum = 0;
+            Time.timeScale = 0;
         }
     }
 
