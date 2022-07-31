@@ -9,6 +9,19 @@ public class LevelManager : MonoBehaviour
     private int maxTaskCount;
     private int maxObjectsCount;
     private int taskCount;
+
+    public GameObject diskIcon;
+    public GameObject cookieIcon;
+    public GameObject squareIcon;
+    public GameObject starIcon;
+    public GameObject triangleIcon;
+
+    public GameObject diskTick;
+    public GameObject cookieTick;
+    public GameObject squareTick;
+    public GameObject starTick;
+    public GameObject triangleTick;
+
     [HideInInspector] public int diskTaskCount;
     [HideInInspector] public int squareTaskCount;
     [HideInInspector] public int starTaskCount;
@@ -96,6 +109,8 @@ public class LevelManager : MonoBehaviour
             diskTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isDiskDone = true;
             isDiskOver = true;
+            diskIcon.SetActive(false);
+            diskTick.SetActive(true);
             // disk uý panel change green tick.
         }
         if (maxDiskCount < diskTaskCount && !isDiskOver)
@@ -121,6 +136,8 @@ public class LevelManager : MonoBehaviour
             squareTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isCubeDone = true;
             isCubeOver = true;
+            squareIcon.SetActive(false);
+            squareTick.SetActive(true);
         }
         if (maxSquareCount < squareTaskCount && !isCubeOver)
         {
@@ -145,6 +162,8 @@ public class LevelManager : MonoBehaviour
             starTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isStarDone = true;
             isStarOver = true;
+            starIcon.SetActive(false);
+            starTick.SetActive(true);
         }
         if (maxStarCount < starTaskCount && !isStarOver)
         {
@@ -169,6 +188,8 @@ public class LevelManager : MonoBehaviour
             cookieTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isCookieDone = true;
             isCookieOver = true;
+            cookieIcon.SetActive(false);
+            cookieTick.SetActive(true);
         }
         if (maxCookieCount < cookieTaskCount && !isCookieOver)
         {
@@ -193,6 +214,8 @@ public class LevelManager : MonoBehaviour
             triangleTaskCount = -1;
             GameManager.gameManager.GetComponent<ObjectPooling>().isTriangelDone = true;
             isTriangleOver = true;
+            triangleIcon.SetActive(false);
+            triangleTick.SetActive(true);
         }
         if (maxTriangleCount < triangleTaskCount && !isTriangleOver)
         {

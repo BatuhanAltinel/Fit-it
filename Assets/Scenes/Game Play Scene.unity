@@ -1302,7 +1302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431016488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 543450651907327509}
@@ -5864,9 +5864,24 @@ PrefabInstance:
       objectReference: {fileID: 2038765897}
     - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
         type: 3}
+      propertyPath: diskIcon
+      value: 
+      objectReference: {fileID: 1834390591}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
       propertyPath: diskText
       value: 
       objectReference: {fileID: 1035282267}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
+      propertyPath: diskTick
+      value: 
+      objectReference: {fileID: 1655365428}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
+      propertyPath: starIcon
+      value: 
+      objectReference: {fileID: 1025147203}
     - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
         type: 3}
       propertyPath: starText
@@ -5874,9 +5889,29 @@ PrefabInstance:
       objectReference: {fileID: 587632361}
     - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
         type: 3}
+      propertyPath: starTick
+      value: 
+      objectReference: {fileID: 536377925}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
+      propertyPath: cookieIcon
+      value: 
+      objectReference: {fileID: 1806860382}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
       propertyPath: cookieText
       value: 
       objectReference: {fileID: 2045167932}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
+      propertyPath: cookieTick
+      value: 
+      objectReference: {fileID: 1345936474}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
+      propertyPath: squareIcon
+      value: 
+      objectReference: {fileID: 1552102024}
     - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
         type: 3}
       propertyPath: squareText
@@ -5884,9 +5919,24 @@ PrefabInstance:
       objectReference: {fileID: 1070340447}
     - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
         type: 3}
+      propertyPath: squareTick
+      value: 
+      objectReference: {fileID: 1319971518}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
+      propertyPath: triangleIcon
+      value: 
+      objectReference: {fileID: 2006128702}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
       propertyPath: triangleText
       value: 
       objectReference: {fileID: 141089857}
+    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+        type: 3}
+      propertyPath: triangleTick
+      value: 
+      objectReference: {fileID: 351732120}
     - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
         type: 3}
       propertyPath: gameOverPanel
@@ -5945,7 +5995,7 @@ PrefabInstance:
     - target: {fileID: 3267930631632355424, guid: 19164807859c34e43b2352a2790d0957,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3267930631632355424, guid: 19164807859c34e43b2352a2790d0957,
         type: 3}
@@ -6050,7 +6100,7 @@ PrefabInstance:
     - target: {fileID: 4184265765957431598, guid: e2e8ef523097f6842b4f4fd4576bfab6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4184265765957431598, guid: e2e8ef523097f6842b4f4fd4576bfab6,
         type: 3}
@@ -6135,7 +6185,7 @@ PrefabInstance:
     - target: {fileID: 4056964519058706998, guid: a5db097aecc83de49b467622fc519d38,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 4056964519058706998, guid: a5db097aecc83de49b467622fc519d38,
         type: 3}
