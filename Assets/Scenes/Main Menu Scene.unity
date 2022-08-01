@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCoin: 0
+  slideNum: 0
 --- !u!4 &723916978
 Transform:
   m_ObjectHideFlags: 0

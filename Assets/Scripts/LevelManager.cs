@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager levelManager;
+    public AdsManager ads;
     private int maxTaskCount;
     private int maxObjectsCount;
     private int taskCount;
+    private int gameOverForAds;
 
     public GameObject diskIcon;
     public GameObject cookieIcon;
@@ -64,7 +66,7 @@ public class LevelManager : MonoBehaviour
         maxTaskCount = 6;
         DataManager.instance.LoadGameData();
         CoinCounter();
-
+        gameOverForAds = 0;
     }
     private void Start()
     {
@@ -116,8 +118,7 @@ public class LevelManager : MonoBehaviour
         if (maxDiskCount < diskTaskCount && !isDiskOver)
         {
             maxDiskCount = 0;
-            gameOverPanel.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            GameOver();
         }
         diskText.text = diskTaskCount + "/" + maxDiskCount;
     }
@@ -142,8 +143,7 @@ public class LevelManager : MonoBehaviour
         if (maxSquareCount < squareTaskCount && !isCubeOver)
         {
             maxSquareCount = 0;
-            gameOverPanel.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            GameOver();
         }
         squareText.text = squareTaskCount + "/" + maxSquareCount;
     }
@@ -168,8 +168,7 @@ public class LevelManager : MonoBehaviour
         if (maxStarCount < starTaskCount && !isStarOver)
         {
             maxStarCount = 0;
-            gameOverPanel.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            GameOver();
         }
         starText.text = starTaskCount + "/" + maxStarCount;
     }
@@ -194,8 +193,7 @@ public class LevelManager : MonoBehaviour
         if (maxCookieCount < cookieTaskCount && !isCookieOver)
         {
             maxCookieCount = 0;
-            gameOverPanel.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            GameOver();
         }
         cookieText.text = cookieTaskCount + "/" + maxCookieCount;
     }
@@ -220,10 +218,20 @@ public class LevelManager : MonoBehaviour
         if (maxTriangleCount < triangleTaskCount && !isTriangleOver)
         {
             maxTriangleCount = 0;
-            gameOverPanel.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            GameOver();
         }
         triangleText.text = triangleTaskCount + "/" + maxTriangleCount;
+    }
+    void GameOver()
+    {
+        gameOverForAds++;
+        gameOverPanel.gameObject.SetActive(true);
+        Time.timeScale = 0;
+        if(gameOverForAds == 1)
+        {
+            ads.PlayAd();
+            gameOverForAds = 0;
+        }
     }
 
 }
