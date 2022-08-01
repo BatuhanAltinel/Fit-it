@@ -6100,11 +6100,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
         type: 3}
-      propertyPath: ads
-      value: 
-      objectReference: {fileID: 888547269396351457}
-    - target: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
-        type: 3}
       propertyPath: coinText
       value: 
       objectReference: {fileID: 2038765897}
@@ -6200,24 +6195,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5384ea5e6c757804d9f097212075f988, type: 3}
---- !u!1 &888547269396351456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 888547270760582042, guid: 5384ea5e6c757804d9f097212075f988,
-    type: 3}
-  m_PrefabInstance: {fileID: 888547269396351455}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &888547269396351457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888547269396351456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18a1def18f167b4a900f2ce97560c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3085173436539438973
 PrefabInstance:
   m_ObjectHideFlags: 0

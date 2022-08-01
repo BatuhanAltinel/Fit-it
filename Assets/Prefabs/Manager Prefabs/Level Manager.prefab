@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888547270760582040}
   - component: {fileID: 888547270760582041}
+  - component: {fileID: 888547269396351457}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -43,6 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3eb161fbd1aa448a5fa0d0e6b4cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ads: {fileID: 888547269396351457}
+  diskIcon: {fileID: 0}
+  cookieIcon: {fileID: 0}
+  squareIcon: {fileID: 0}
+  starIcon: {fileID: 0}
+  triangleIcon: {fileID: 0}
+  diskTick: {fileID: 0}
+  cookieTick: {fileID: 0}
+  squareTick: {fileID: 0}
+  starTick: {fileID: 0}
+  triangleTick: {fileID: 0}
   diskTaskCount: 0
   squareTaskCount: 0
   starTaskCount: 0
@@ -53,7 +65,6 @@ MonoBehaviour:
   maxStarCount: 0
   maxCookieCount: 0
   maxTriangleCount: 0
-  coin: 0
   coinText: {fileID: 0}
   diskText: {fileID: 0}
   cookieText: {fileID: 0}
@@ -62,3 +73,16 @@ MonoBehaviour:
   starText: {fileID: 0}
   gameOverPanel: {fileID: 0}
   levelCompletePanel: {fileID: 0}
+  levelCompleteNum: 0
+--- !u!114 &888547269396351457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888547270760582042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18a1def18f167b4a900f2ce97560c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

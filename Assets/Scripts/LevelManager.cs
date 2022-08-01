@@ -10,7 +10,6 @@ public class LevelManager : MonoBehaviour
     private int maxTaskCount;
     private int maxObjectsCount;
     private int taskCount;
-    private int gameOverForAds;
 
     public GameObject diskIcon;
     public GameObject cookieIcon;
@@ -66,7 +65,7 @@ public class LevelManager : MonoBehaviour
         maxTaskCount = 6;
         DataManager.instance.LoadGameData();
         CoinCounter();
-        gameOverForAds = 0;
+        
     }
     private void Start()
     {
@@ -224,13 +223,15 @@ public class LevelManager : MonoBehaviour
     }
     void GameOver()
     {
-        gameOverForAds++;
+        DataManager.instance.LoadGameData();
         gameOverPanel.gameObject.SetActive(true);
+        DataManager.instance.SaveGameData();
         Time.timeScale = 0;
-        if(gameOverForAds == 1)
+        if(DataManager.instance.gameOverCountsForAds == 2)
         {
             ads.PlayAd();
-            gameOverForAds = 0;
+            DataManager.instance.gameOverCountsForAds = 0;
+            
         }
     }
 

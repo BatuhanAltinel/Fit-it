@@ -50,7 +50,7 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
         if(placementId == "Rewarded_Android" && showResult == ShowResult.Finished)
         {
             Debug.Log("Video finished!!");
-            DataManager.instance.gameCoin += 15;
+            DataManager.instance.gameCoin += 10;
             DataManager.instance.SaveGameData();
         }
     }
