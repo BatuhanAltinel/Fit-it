@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using System;
 
 public class AdsManager : MonoBehaviour,IUnityAdsListener
 {
     private string gameID = "4828937";
+
+    Action onRewardedSuccess;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +23,9 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
             Advertisement.Show("Interstitial_Android");
         }
     }
-    public void PlayRewardedVideo()
+    public void PlayRewardedVideo(Action onSuccess)
     {
+        onRewardedSuccess = onSuccess;
         if (Advertisement.IsReady("Rewarded_Android"))
         {
             Advertisement.Show("Rewarded_Android");
@@ -50,8 +54,7 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
         if(placementId == "Rewarded_Android" && showResult == ShowResult.Finished)
         {
             Debug.Log("Video finished!!");
-            DataManager.instance.gameCoin += 10;
-            DataManager.instance.SaveGameData();
+            onRewardedSuccess.Invoke();
         }
     }
 }

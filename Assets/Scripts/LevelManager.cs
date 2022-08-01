@@ -234,5 +234,14 @@ public class LevelManager : MonoBehaviour
             
         }
     }
+    public void AddingGolds()
+    {
+        ads.PlayRewardedVideo(OnRewardedAdSuccess);
+    }
+    void OnRewardedAdSuccess()
+    {
+        DataManager.instance.gameCoin += 10;
+        DataManager.instance.SaveGameData();
+    }
 
 }

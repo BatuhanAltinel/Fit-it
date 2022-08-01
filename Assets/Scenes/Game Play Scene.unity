@@ -306,18 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac63ccc44761884095bf6b6be425e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &16367706 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 790360993, guid: e140f9d7e97d506439de86aa137ed7c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 16367704}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18a1def18f167b4a900f2ce97560c67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &33230043
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,7 +4015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1420105337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4092,9 +4080,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 16367706}
-        m_TargetAssemblyTypeName: AdsManager, Assembly-CSharp
-        m_MethodName: PlayRewardedVideo
+      - m_Target: {fileID: 888547269396351456}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: AddingGolds
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6195,6 +6183,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5384ea5e6c757804d9f097212075f988, type: 3}
+--- !u!114 &888547269396351456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 888547270760582041, guid: 5384ea5e6c757804d9f097212075f988,
+    type: 3}
+  m_PrefabInstance: {fileID: 888547269396351455}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c3eb161fbd1aa448a5fa0d0e6b4cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3085173436539438973
 PrefabInstance:
   m_ObjectHideFlags: 0
