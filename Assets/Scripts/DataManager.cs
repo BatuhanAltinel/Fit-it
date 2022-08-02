@@ -76,7 +76,6 @@ public class DataManager : MonoBehaviour
                 }
                 if (LevelManager.levelManager.isGameOver)
                 {
-                    gameOverCountsForAds++;
                     saveData.GameOverForAds = gameOverCountsForAds;
                 }
 

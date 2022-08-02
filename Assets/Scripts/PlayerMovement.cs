@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     private Touch touch;
-    [SerializeField] private float moveSpeed = .01f;
+    [SerializeField] private float moveSpeed = .02f;
     
     // Update is called once per frame
     void Update()
@@ -26,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * moveSpeed ,
                             transform.position.y, transform.position.z);
 
-        if (transform.position.x > 14.5f)
+        if (transform.position.x > 15.2f)
         {
-            this.transform.position = new Vector3(14.5f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(15.2f, transform.position.y, transform.position.z);
         }
-        else if (transform.position.x < -8f)
+        else if (transform.position.x < -8.95f)
         {
-            this.transform.position = new Vector3(-8f, transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(-8.95f, transform.position.y, transform.position.z);
         }
     }
 }

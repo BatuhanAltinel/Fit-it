@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     private int maxTaskCount;
     private int maxObjectsCount;
     private int taskCount;
+    public ParticleSystem fireworkParticle;
 
     public GameObject diskIcon;
     public GameObject cookieIcon;
@@ -64,11 +65,11 @@ public class LevelManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        maxTaskCount = 6;
+        maxTaskCount = 2;
         DataManager.instance.LoadGameData();
         CoinCounter();
         isGameOver = false;
-        
+        fireworkParticle.Stop();
     }
     private void Start()
     {
@@ -82,9 +83,7 @@ public class LevelManager : MonoBehaviour
     {
         if (levelCompleteNum >= 5)
         {
-            levelCompletePanel.gameObject.SetActive(true);
-            levelCompleteNum = 0;
-            Time.timeScale = 0;
+            SucceddGame();
         }
     }
 
@@ -95,7 +94,7 @@ public class LevelManager : MonoBehaviour
 
     public void TaskGeneretor()
     {
-        maxObjectsCount = Random.Range(6, 11);
+        maxObjectsCount = Random.Range(2, 3);
         taskCount = Random.Range(1, maxTaskCount);
     }
     public void DiskTask()
@@ -117,7 +116,7 @@ public class LevelManager : MonoBehaviour
             diskTick.SetActive(true);
             // disk uý panel change green tick.
         }
-        if (maxDiskCount < diskTaskCount && !isDiskOver)
+        if (maxDiskCount < diskTaskCount && !isDiskOver && !isGameOver)
         {
             maxDiskCount = 0;
             GameOver();
@@ -142,7 +141,7 @@ public class LevelManager : MonoBehaviour
             squareIcon.SetActive(false);
             squareTick.SetActive(true);
         }
-        if (maxSquareCount < squareTaskCount && !isCubeOver)
+        if (maxSquareCount < squareTaskCount && !isCubeOver && !isGameOver)
         {
             maxSquareCount = 0;
             GameOver();
@@ -167,7 +166,7 @@ public class LevelManager : MonoBehaviour
             starIcon.SetActive(false);
             starTick.SetActive(true);
         }
-        if (maxStarCount < starTaskCount && !isStarOver)
+        if (maxStarCount < starTaskCount && !isStarOver && !isGameOver)
         {
             maxStarCount = 0;
             GameOver();
@@ -192,7 +191,7 @@ public class LevelManager : MonoBehaviour
             cookieIcon.SetActive(false);
             cookieTick.SetActive(true);
         }
-        if (maxCookieCount < cookieTaskCount && !isCookieOver)
+        if (maxCookieCount < cookieTaskCount && !isCookieOver && !isGameOver)
         {
             maxCookieCount = 0;
             GameOver();
@@ -217,7 +216,7 @@ public class LevelManager : MonoBehaviour
             triangleIcon.SetActive(false);
             triangleTick.SetActive(true);
         }
-        if (maxTriangleCount < triangleTaskCount && !isTriangleOver)
+        if (maxTriangleCount < triangleTaskCount && !isTriangleOver && !isGameOver)
         {
             maxTriangleCount = 0;
             GameOver();
@@ -228,18 +227,36 @@ public class LevelManager : MonoBehaviour
     {
         isGameOver = true;
         gameOverPanel.gameObject.SetActive(true);
+        SoundManager.instance.GameOverSound();
+        DataManager.instance.gameOverCountsForAds++;
+        Debug.Log(DataManager.instance.gameOverCountsForAds);
         DataManager.instance.SaveGameData();
-        if(DataManager.instance.gameOverCountsForAds >= 2)
+        if(DataManager.instance.gameOverCountsForAds >= 3)
         {
             DataManager.instance.gameOverCountsForAds = 0;
-            isGameOver = false;
             DataManager.instance.SaveGameData();
-            DataManager.instance.LoadGameData();
             ads.PlayAd();
-            
         }
-        Time.timeScale = 0;
     }
+
+    void SucceddGame()
+    {
+        fireworkParticle.Play();
+        SoundManager.instance.FireworkSound();
+        isGameOver = true;
+        DataManager.instance.gameOverCountsForAds++;
+        DataManager.instance.SaveGameData();
+        Debug.Log(DataManager.instance.gameOverCountsForAds);
+        if (DataManager.instance.gameOverCountsForAds >= 3)
+        {
+            DataManager.instance.gameOverCountsForAds = 0;
+            DataManager.instance.SaveGameData();
+            ads.PlayAd();
+        }
+        levelCompletePanel.gameObject.SetActive(true);
+        levelCompleteNum = 0;
+    }
+
     public void AddingGolds()
     {
         ads.PlayRewardedVideo(OnRewardedAdSuccess);

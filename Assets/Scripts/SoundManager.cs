@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip smoothSwipeSound;
     public AudioClip bangSound;
     public AudioClip collectSound;
+    public AudioClip fireworkSound;
+    public AudioClip gameOverSound;
     //public AudioClip backgroundSound;
 
     // Start is called before the first frame update
@@ -37,6 +39,13 @@ public class SoundManager : MonoBehaviour
     {
         audioSource.PlayOneShot(collectSound);
     }
-
+    public void FireworkSound()
+    {
+        audioSource.PlayOneShot(fireworkSound);
+    }
+    public void GameOverSound()
+    {
+        audioSource.PlayOneShot(gameOverSound);
+    }
    
 }

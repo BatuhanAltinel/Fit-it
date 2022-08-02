@@ -31,7 +31,7 @@ public class FitTrigger : MonoBehaviour
             isTriggered = true;
             
         }
-        if (other.gameObject.CompareTag("FitTrigger") && isTriggered)
+        if (other.gameObject.CompareTag("FitTrigger") && isTriggered && !LevelManager.levelManager.isGameOver)
         {
             Debug.Log("FÝT TRÝGGERED");
             fitParticle.Play();
@@ -76,7 +76,7 @@ public class FitTrigger : MonoBehaviour
 
     void DontFitIt()
     {
-        if (this.transform.position.y < yAxisBoundary && !isTriggered )
+        if (this.transform.position.y < yAxisBoundary && !isTriggered && !LevelManager.levelManager.isGameOver)
         {
             Debug.Log("dont fit the right place");
             dontFitParticle.Play();

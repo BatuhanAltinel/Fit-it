@@ -30,6 +30,7 @@ public class SlideAnimation : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 GameManager.gameManager.isGameStarted = true;
-            }
+                LevelManager.levelManager.isGameOver = false;
+        }
     }
 }

@@ -34,9 +34,9 @@ public class ObjectPooling : MonoBehaviour
     [HideInInspector] public bool isCookieDone;
     [HideInInspector] public bool isTriangelDone;
 
-    private int amountOfObject = 4;
+    private int amountOfObject = 5;
     private int typeOfObjects = 5;
-    private float spawnWaitingTime = 5.5f;
+    private float spawnWaitingTime = 4f;
     //private int randomSelectNumber;
 
 
@@ -65,6 +65,10 @@ public class ObjectPooling : MonoBehaviour
         {
             RandomObjectSpawn();
             GameManager.gameManager.isGameStarted = false;
+        }
+        if (LevelManager.levelManager.isGameOver)
+        {
+            StopCoroutine("DelaySpawn");
         }
     }
 
@@ -105,7 +109,7 @@ public class ObjectPooling : MonoBehaviour
             StartCoroutine("RandomObjectSpawn");
         }
         else
-            StopCoroutine("RandomObjectSpawn");
+            StopCoroutine("DelaySpawn");
     }
 
     void RandomObjectSpawn()

@@ -9,6 +9,8 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
     private string gameID = "4828937";
 
     Action onRewardedSuccess;
+    //public string intersitialAd = "Interstitial_Android";
+    //public ShowResult newShowResult;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,15 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
             Advertisement.Show("Interstitial_Android");
         }
     }
+    //public bool AdFinished(string placementId, ShowResult showResult)
+    //{
+    //    showResult = newShowResult;
+    //    if (placementId == "Interstitial_Android" && newShowResult == ShowResult.Finished)
+    //    {
+    //        return true;
+    //    }else
+    //        return false;
+    //}
     public void PlayRewardedVideo(Action onSuccess)
     {
         onRewardedSuccess = onSuccess;
