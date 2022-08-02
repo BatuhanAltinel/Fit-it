@@ -52,6 +52,8 @@ public class LevelManager : MonoBehaviour
     private bool isStarOver;
     private bool isCookieOver;
     private bool isTriangleOver;
+
+    [HideInInspector] public bool isGameOver;
     // Start is called before the first frame update
     void Awake()
     {
@@ -65,6 +67,7 @@ public class LevelManager : MonoBehaviour
         maxTaskCount = 6;
         DataManager.instance.LoadGameData();
         CoinCounter();
+        isGameOver = false;
         
     }
     private void Start()
@@ -223,16 +226,19 @@ public class LevelManager : MonoBehaviour
     }
     void GameOver()
     {
-        DataManager.instance.LoadGameData();
+        isGameOver = true;
         gameOverPanel.gameObject.SetActive(true);
         DataManager.instance.SaveGameData();
-        Time.timeScale = 0;
-        if(DataManager.instance.gameOverCountsForAds == 2)
+        if(DataManager.instance.gameOverCountsForAds >= 2)
         {
-            ads.PlayAd();
             DataManager.instance.gameOverCountsForAds = 0;
+            isGameOver = false;
+            DataManager.instance.SaveGameData();
+            DataManager.instance.LoadGameData();
+            ads.PlayAd();
             
         }
+        Time.timeScale = 0;
     }
     public void AddingGolds()
     {

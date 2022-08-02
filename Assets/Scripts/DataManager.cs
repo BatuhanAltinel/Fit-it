@@ -74,7 +74,7 @@ public class DataManager : MonoBehaviour
                     slideNum = 1;
                     saveData.IsSlide = slideNum;
                 }
-                if (LevelManager.levelManager.gameOverPanel.activeInHierarchy)
+                if (LevelManager.levelManager.isGameOver)
                 {
                     gameOverCountsForAds++;
                     saveData.GameOverForAds = gameOverCountsForAds;
