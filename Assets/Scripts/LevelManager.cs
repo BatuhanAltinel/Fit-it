@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     private int maxObjectsCount;
     private int taskCount;
     public ParticleSystem fireworkParticle;
+    public Button pauseButton;
+    public Button resumeButton;
 
     public GameObject diskIcon;
     public GameObject cookieIcon;

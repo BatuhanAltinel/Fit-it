@@ -7,6 +7,7 @@ public class SlideAnimation : MonoBehaviour
 {
     private Touch touch;
     private Animator anim;
+    public GameObject slideToFitText;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,13 @@ public class SlideAnimation : MonoBehaviour
                 anim.SetInteger("HandSliding", 1);
                 DataManager.instance.SaveGameData();
                 gameObject.SetActive(false);
+                slideToFitText.SetActive(false);
             }
         }
         else if(DataManager.instance.slideNum == 1)
             {
                 gameObject.SetActive(false);
+                slideToFitText.SetActive(false);
                 GameManager.gameManager.isGameStarted = true;
                 LevelManager.levelManager.isGameOver = false;
         }

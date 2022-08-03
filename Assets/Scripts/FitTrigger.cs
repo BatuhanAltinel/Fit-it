@@ -12,7 +12,7 @@ public class FitTrigger : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        yAxisBoundary = -9.1f;
+        yAxisBoundary = -7.9f;
     }
     private void OnEnable()
     {
