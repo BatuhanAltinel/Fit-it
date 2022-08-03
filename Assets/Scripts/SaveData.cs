@@ -12,6 +12,14 @@ public class SaveData
     private int coin;
     private int isSlide;
     private int gameOverForAds;
+    private int level;
+
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
+    }
+
 
     public int GameOverForAds
     {

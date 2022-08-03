@@ -14,6 +14,7 @@ public class DataManager : MonoBehaviour
     [HideInInspector] public int gameCoin;
     [HideInInspector] public int slideNum;
     [HideInInspector] public int gameOverCountsForAds;
+    [HideInInspector] public int levelCount;
     private string gameDataPath = "/coinData.batu";
     // Start is called before the first frame update
     void Awake()
@@ -46,12 +47,14 @@ public class DataManager : MonoBehaviour
             gameCoin = 0;
             slideNum = 0;
             gameOverCountsForAds = 0;
+            levelCount = 1;
 
             saveData = new SaveData();
 
             saveData.Coin = gameCoin;
             saveData.IsSlide = slideNum;
             saveData.GameOverForAds = gameOverCountsForAds;
+            saveData.Level = levelCount;
             SaveGameData();
         }
     }
@@ -69,6 +72,7 @@ public class DataManager : MonoBehaviour
             if (saveData != null)
             {
                 saveData.Coin = gameCoin;
+                saveData.Level = levelCount;
                 if (GameManager.gameManager.isGameStarted)
                 {
                     slideNum = 1;
@@ -78,7 +82,8 @@ public class DataManager : MonoBehaviour
                 {
                     saveData.GameOverForAds = gameOverCountsForAds;
                 }
-
+                    
+                
                 bf.Serialize(file, saveData);
             }
             
@@ -113,6 +118,7 @@ public class DataManager : MonoBehaviour
                 gameCoin = saveData.Coin;
                 slideNum = saveData.IsSlide;
                 gameOverCountsForAds = saveData.GameOverForAds;
+                levelCount = saveData.Level;
             }
         }
         catch (Exception)

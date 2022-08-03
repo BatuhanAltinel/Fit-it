@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class LevelManager : MonoBehaviour
     public Text triangleText;
     public Text starText;
 
+    public TextMeshProUGUI levelText;
+
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel;
     [HideInInspector] public int levelCompleteNum = 0;
@@ -80,12 +83,16 @@ public class LevelManager : MonoBehaviour
         CookieTask();
         StarTask();
         TriangleTask();
+
+        levelText.text = "Level " + DataManager.instance.levelCount;
     }
     private void Update()
     {
         if (levelCompleteNum >= 5)
         {
             SucceddGame();
+            DataManager.instance.levelCount++;
+            DataManager.instance.SaveGameData();
         }
     }
 
