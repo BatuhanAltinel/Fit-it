@@ -9,6 +9,9 @@ public class LevelManager : MonoBehaviour
     public static LevelManager levelManager;
     public AdsManager ads;
     private int maxTaskCount;
+    private int minTaskCount;
+    private int maxTaskCountForLevel;
+    private int minTaskCountForLevel;
     private int maxObjectsCount;
     private int taskCount;
     public ParticleSystem fireworkParticle;
@@ -48,6 +51,7 @@ public class LevelManager : MonoBehaviour
     public Text starText;
 
     public TextMeshProUGUI levelText;
+    public Text levelTextUI;
 
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel;
@@ -70,7 +74,7 @@ public class LevelManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        maxTaskCount = 2;
+        TasksForLevels();
         DataManager.instance.LoadGameData();
         CoinCounter();
         isGameOver = false;
@@ -85,6 +89,7 @@ public class LevelManager : MonoBehaviour
         TriangleTask();
 
         levelText.text = "Level " + DataManager.instance.levelCount;
+        levelTextUI.text = "Level  " + DataManager.instance.levelCount;
     }
     private void Update()
     {
@@ -103,8 +108,8 @@ public class LevelManager : MonoBehaviour
 
     public void TaskGeneretor()
     {
-        maxObjectsCount = Random.Range(2, 3);
-        taskCount = Random.Range(1, maxTaskCount);
+        maxObjectsCount = Random.Range(minTaskCountForLevel, maxTaskCountForLevel);
+        taskCount = Random.Range(minTaskCount, maxTaskCount);
     }
     public void DiskTask()
     {
@@ -274,6 +279,32 @@ public class LevelManager : MonoBehaviour
     {
         DataManager.instance.gameCoin += 10;
         DataManager.instance.SaveGameData();
+    }
+    public void TasksForLevels()
+    {
+        if(DataManager.instance.levelCount <= 3)
+        {
+            maxTaskCount = 2;
+            minTaskCount = 1;
+            maxTaskCountForLevel = 3;
+            minTaskCountForLevel = 2;
+            DataManager.instance.SaveGameData();
+        }else if(DataManager.instance.levelCount > 3 && DataManager.instance.levelCount <= 9)
+        {
+            maxTaskCount = 5;
+            minTaskCount = 1;
+            minTaskCountForLevel = 6;
+            maxTaskCountForLevel = 7;
+            DataManager.instance.SaveGameData();
+        }
+        else if(DataManager.instance.levelCount > 9)
+        {
+            maxTaskCount = 8;
+            minTaskCount = 3;
+            minTaskCountForLevel = 9;
+            maxTaskCountForLevel = 10;
+            DataManager.instance.SaveGameData();
+        }
     }
 
 }

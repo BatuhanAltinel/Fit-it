@@ -21,12 +21,22 @@ public class SceneControl : MonoBehaviour
     {
         LevelManager.levelManager.pauseButton.gameObject.SetActive(false);
         LevelManager.levelManager.resumeButton.gameObject.SetActive(true);
+        LevelManager.levelManager.isGameOver = true;
         Time.timeScale = 0;
     }
     public void ResumeGame()
     {
         LevelManager.levelManager.pauseButton.gameObject.SetActive(true);
         LevelManager.levelManager.resumeButton.gameObject.SetActive(false);
+        LevelManager.levelManager.isGameOver = false;
         Time.timeScale = 1;
+    }
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+        #else
+        Application.Quit();
+        #endif
     }
 }

@@ -37,6 +37,7 @@ public class ObjectPooling : MonoBehaviour
     private int amountOfObject = 5;
     private int typeOfObjects = 5;
     private float spawnWaitingTime = 4f;
+    private bool isPaused;
     //private int randomSelectNumber;
 
 
@@ -69,6 +70,11 @@ public class ObjectPooling : MonoBehaviour
         if (LevelManager.levelManager.isGameOver)
         {
             StopCoroutine("DelaySpawn");
+            isPaused = true;
+        }else if(!LevelManager.levelManager.isGameOver && isPaused)
+        {
+            StartCoroutine("DelaySpawn");
+            isPaused = false;
         }
     }
 
